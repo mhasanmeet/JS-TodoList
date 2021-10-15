@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-shadow: border-box;
+    font-family: poppins;
+}
+
+body{
+    background-color: #a58b94;
+    color: #e7dadf;
+    min-height: 100vh;
+}
+
+header{
+    font-size: 1.5rem;
+    -webkit-text-stroke: .3px rgb(0, 0, 0);
+}
+
+header, form{
+    min-height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-input, .todo-button{
+    padding: .4rem 2rem;
+    font-size: 2rem;
+    border: none;
+    background: #ccadad;
+    transition: .5s;
+    border-radius: 2px;
+    color: #fff;
+}
+
+.todo-input:focus{
+    outline: none;
+}
+
+.todo-button:hover{
+    transition: .5s;
+    background: rgb(136, 112, 112);
+    color: #ccadad;
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 30%;
+    max-width: 90%;
+    list-style: none;
+}
+
+.todo{
+    margin: .5rem 0;
+    padding: .5rem;
+    background-color: rgb(136, 112, 112);
+    border-radius: 3px;
+    color: #e7dadf;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo li{
+    flex: 1;
+}
+
+.completed-btn{
+    background: #5db353;
+    border: none;
+    margin: 3px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    color: #e7dadf;
+    cursor: pointer;
+}
+
+.Delete-btn{
+    background: #d3524e;
+    border: none;
+    margin: 3px;
+    padding: 6px 12px;
+    border-radius: 2px;
+    color: #e7dadf;
+    cursor: pointer;
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
