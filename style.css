@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root{
+    --bdy-txt-color: #e7dadf;
+    --inpt-txt-color: #fff;
+    --bg-color: #a58b94;
+    --bg-secnd-color: #ccadad;
+    --bg-trd-color: rgb(136, 112, 112);
+    --bg-suc-color: #5db353;
+    --bg-dng-color: #d3524e;
+    --dng-color: #e70800;
+    --txt-stroke: #000;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,14 +20,14 @@
 }
 
 body{
-    background-color: #a58b94;
-    color: #e7dadf;
+    background-color: var(--bg-color);
+    color: var(--bdy-txt-color);
     min-height: 100vh;
 }
 
 header{
     font-size: 1.5rem;
-    -webkit-text-stroke: .3px rgb(0, 0, 0);
+    -webkit-text-stroke: .3px var(--txt-stroke);
 }
 
 header, form{
@@ -29,20 +41,17 @@ header, form{
     padding: .4rem 2rem;
     font-size: 2rem;
     border: none;
-    background: #ccadad;
+    background: var(--bg-secnd-color);
     transition: .5s;
     border-radius: 2px;
-    color: #fff;
-}
-
-.todo-input:focus{
+    color: var(--inpt-txt-color);
     outline: none;
 }
 
 .todo-button:hover{
     transition: .5s;
-    background: rgb(136, 112, 112);
-    color: #ccadad;
+    background: var(--bg-trd-color);
+    color: var(--bg-secnd-color);
 }
 
 .todo-container{
@@ -55,46 +64,99 @@ header, form{
     min-width: 30%;
     max-width: 90%;
     list-style: none;
-}
+} 
 
 .todo{
     margin: .5rem 0;
     padding: .5rem;
-    background-color: rgb(136, 112, 112);
+    background-color: var(--bg-trd-color);
     border-radius: 3px;
-    color: #e7dadf;
+    color: var(--bdy-txt-color);
     font-size: 1.2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: all 1s ease;
 }
 
 .todo li{
     flex: 1;
 }
 
+.fa-check, .fa-trash{
+    pointer-events: none;
+}
+
 .completed-btn{
-    background: #5db353;
+    background: var(--bg-suc-color);
     border: none;
     margin: 3px;
     padding: 6px 12px;
     border-radius: 2px;
-    color: #e7dadf;
+    color: var(--inpt-txt-color);
     cursor: pointer;
+    transition: all 1s ease;
 }
 
 .Delete-btn{
-    background: #d3524e;
+    background: var(--bg-dng-color);
     border: none;
     margin: 3px;
     padding: 6px 12px;
     border-radius: 2px;
-    color: #e7dadf;
+    color: var(--inpt-txt-color);
     cursor: pointer;
+    transition: all 1s ease;
 }
 
 .completed{
     text-decoration: line-through;
-    opacity: 0.5;
+    opacity: 0.6;
+    transition: all 1s ease;
 }
 
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+    color: var(--dng-color);
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select{
+    color: var(--inpt-txt-color);
+    background: var(--bg-secnd-color);
+    width: 12rem;
+    cursor: pointer;
+    padding: .3rem 1.5rem;
+    border-radius: 3px;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background: var(--bg-trd-color);
+    top: 0;
+    right: 0;
+    padding: .3rem .5rem;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.select:hover::after{
+    background-color: var(--bg-trd-color);
+    color: var(--txt-stroke);
+    transition: .5s;
+}
