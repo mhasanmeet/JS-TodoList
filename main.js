@@ -1,7 +1,7 @@
 const todoInput = document.querySelector(".todo-input");
 const todoButton = document.querySelector(".todo-button");
 const todoList = document.querySelector(".todo-list");
-const filterOption = document.querySelector('.filter-todo');
+const filterOption = document.querySelector(".filter-todo");
 
 todoButton.addEventListener("click", addTodo);
 
@@ -15,12 +15,12 @@ function addTodo(event){
     newTodo.innerText = todoInput.value;
     newTodo.classList.add("todo-item");
     todoDiv.appendChild(newTodo);
-    //Ceck Mark
+    //Check Mark
     const completedBtn = document.createElement("button");
     completedBtn.innerHTML = '<i class="fas fa-check"></i>';
     completedBtn.classList.add("completed-btn");
     todoDiv.appendChild(completedBtn);
-    //Ceck Mark
+    //Delete Mark
     const DeleteBtn = document.createElement("button");
     DeleteBtn.innerHTML = '<i class="fas fa-trash"></i>';
     DeleteBtn.classList.add("Delete-btn");
@@ -29,7 +29,7 @@ function addTodo(event){
     todoList.appendChild(todoDiv);
 }
 
-
+// Delete Complete Check
 todoList.addEventListener("click", deleteCheck);
 
 function deleteCheck(e){
@@ -51,6 +51,34 @@ function deleteCheck(e){
     }
 }
 
+// Filtering
+filterOption.addEventListener("click", filterTodo);
+
 function filterTodo(e){
-    
+    const todos = todoList.childNodes;
+    todos.forEach(function(todos){
+        switch(e.target.value){
+            case "all":
+                todos.style.display = "flex";
+            break;
+            case "completed":
+                if(todos.classList.contains("completed")){
+                    todos.style.display = "flex";
+                }
+                else {
+                    todos.style.display = "none";
+                }
+            break;
+            case "uncompleted":
+                if(!todos.classList.contains("completed")){
+                    todos.style.display = "flex";
+                }
+                else{
+                    todos.style.display = "none";
+                }
+            break;
+        }
+    });
 }
+
+
