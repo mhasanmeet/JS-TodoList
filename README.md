@@ -1,5 +1,7 @@
 # JavaScript full functiona Todo List, inspired from Dev Ed.
 
+[JS Todo](todo-image.png).
+
 ### In this project I make a JS Todo List where you can make
 - Add todo
 - Complete marked and mute Todo
