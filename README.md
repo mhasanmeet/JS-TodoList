@@ -10,4 +10,9 @@
 
 -------------------------
 
+GitHub pages Link: mhasanmeet.github.io/js-todolist/
+Cloudfare Pages Link: https://44022a7f.js-todolist.pages.dev/
+
+-------------------------
+
 ## If you like the project give me a **Star**
